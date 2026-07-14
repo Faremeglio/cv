@@ -55,7 +55,7 @@
   <a href="#ai">Кейсы</a>
   <a href="#portfolio">Портфолио</a>
   <a href="#contacts">Контакты</a>
-  <a href="{{ ctaHref }}" class="btn btn-primary" style="margin-left: auto;">{{ ctaLabel }}</a>
+  <a href="{{ ctaHref }}" class="btn btn-primary" target="_blank" rel="noopener" style="margin-left: auto;">{{ ctaLabel }}</a>
 </nav>
 
 <header id="about" class="wrap hero-grid" style="padding: var(--space-8) 0 var(--space-6);">
@@ -197,22 +197,22 @@
 <section id="portfolio" class="sec">
   <div class="wrap">
     <h2 style="font-family: var(--font-heading); font-size: 32px; margin: 0 0 var(--space-2);">Портфолио</h2>
-    <p style="font-size: 14px; color: var(--color-neutral-700); margin: 0 0 var(--space-5); max-width: 60ch;">Примеры до/после: исходная задача, запрос к ИИ, правки, финальный текст. Материалы добавлю сюда.</p>
+    
     <div class="grid-4">
       <div style="display: flex; flex-direction: column; gap: var(--space-2);">
-        <image-slot id="portfolio-1" shape="rect" placeholder="Telegram-пост: до/после" style="width: 100%; aspect-ratio: 4/3;"></image-slot>
+        <img src="./portfolio-1.png" alt="Telegram-пост с итогами опроса курьеров" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: top; border: 2px solid var(--color-divider);">
         <p style="font-size: 13px; margin: 0;">Пример поста</p>
       </div>
       <div style="display: flex; flex-direction: column; gap: var(--space-2);">
-        <image-slot id="portfolio-2" shape="rect" placeholder="Коммуникация курьерам" style="width: 100%; aspect-ratio: 4/3;"></image-slot>
+        <img src="./portfolio-2.png" alt="Профиль корпоративного Telegram-канала" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: top; border: 2px solid var(--color-divider);">
         <p style="font-size: 13px; margin: 0;">ТГ-канал</p>
       </div>
       <div style="display: flex; flex-direction: column; gap: var(--space-2);">
-        <image-slot id="portfolio-3" shape="rect" placeholder="Методичка / курс" style="width: 100%; aspect-ratio: 4/3;"></image-slot>
+        <img src="./portfolio-3.png" alt="Дашборд итогов доставки по месяцам" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: top; border: 2px solid var(--color-divider);">
         <p style="font-size: 13px; margin: 0;">Новый дашборд - презентация в корпоративном стиле вместо тяжелых презентаций</p>
       </div>
       <div style="display: flex; flex-direction: column; gap: var(--space-2);">
-        <image-slot id="portfolio-4" shape="rect" placeholder="Презентация руководству" style="width: 100%; aspect-ratio: 4/3;"></image-slot>
+        <img src="./portfolio-4.png" alt="Дашборд еженедельного опроса новичков" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: top; border: 2px solid var(--color-divider);">
         <p style="font-size: 13px; margin: 0;">Фронт дашборда с еженедельным исследованием</p>
       </div>
     </div>
@@ -224,7 +224,7 @@
     <h2 style="font-family: var(--font-heading); font-size: 40px; margin: 0 0 var(--space-4);">Контакты</h2>
     
     <div class="contacts-row">
-      <a href="{{ ctaHref }}" class="btn btn-primary" style="background: var(--color-neutral-100); color: var(--color-accent-700); border-color: var(--color-neutral-100);">{{ ctaLabel }}</a>
+      <a href="{{ ctaHref }}" class="btn btn-primary" target="_blank" rel="noopener" style="background: var(--color-neutral-100); color: var(--color-accent-700); border-color: var(--color-neutral-100);">{{ ctaLabel }}</a>
       <a href="tel:+79999216310" style="color: var(--color-neutral-100); text-decoration: underline;">+7 999 921-63-10</a>
       <a href="mailto:makklakovaa@gmail.com" style="color: var(--color-neutral-100); text-decoration: underline;">makklakovaa@gmail.com</a>
       <a href="https://www.linkedin.com/in/anastasia-maklakova-64567824a" style="color: var(--color-neutral-100); text-decoration: underline;">LinkedIn</a>
