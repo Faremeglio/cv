@@ -8,8 +8,8 @@
 <body>
 <x-dc>
 <helmet>
-  <link rel="stylesheet" href="./styles.css">
-  <script src="./_ds_bundle.js"></script>
+  <link rel="stylesheet" href="_ds/modernist-e61e83f8-e86e-4474-82bd-0c9b6f204d5c/styles.css">
+  <script src="_ds/modernist-e61e83f8-e86e-4474-82bd-0c9b6f204d5c/_ds_bundle.js"></script>
   <script src="./image-slot.js"></script>
   <style>
     html { scroll-behavior: smooth; }
@@ -26,13 +26,15 @@
     .flow-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-neutral-700); margin: 0 0 6px; }
     .flow-text { font-size: 14px; line-height: 1.4; margin: 0; }
     @media (max-width: 900px) { .flow { flex-direction: column; } .flow-arrow { transform: rotate(90deg); padding: 4px 0; } }
+    .page-shell { container-type: inline-size; container-name: page; }
     .hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-6); align-items: start; }
     .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
     .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); }
     .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
     .contacts-row { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center; }
     .nav { flex-wrap: wrap; row-gap: var(--space-2); }
-    @media (max-width: 860px) {
+    @container page (max-width: 860px) {
+      .nav-brand { flex: 1 1 100%; }
       .hero-grid { grid-template-columns: 1fr; }
       .hero-grid > div:last-child { order: -1; max-width: 260px; }
       .grid-3, .grid-4, .grid-2 { grid-template-columns: 1fr; }
@@ -40,13 +42,18 @@
       .wrap { padding: 0 var(--space-4); }
       .nav { gap: var(--space-3); }
       .nav .btn { margin-left: 0 !important; order: 10; width: 100%; text-align: left; }
+      h1 { font-size: 40px !important; }
+      .flow { flex-direction: column; }
+      .flow-arrow { transform: rotate(90deg); padding: 4px 0; }
     }
-    @media (max-width: 520px) {
-      h1 { font-size: 32px !important; }
+    @container page (max-width: 520px) {
+      h1 { font-size: 30px !important; }
+      .card-kicker { font-size: 10px !important; }
     }
   </style>
 </helmet>
 
+<div class="page-shell">
 <nav class="nav" style="position: sticky; top: 0; z-index: 50; background: var(--color-bg);">
   <span class="nav-brand">Анастасия Маклакова</span>
   <a href="#about">Обо мне</a>
@@ -129,43 +136,15 @@
       <span class="tag tag-outline">Perplexity</span>
     </div>
     <div class="grid-4">
-      <div class="card">
-        <div class="card-title">Исследования</div>
-        <ul class="card-body" style="margin: 0; padding-left: 18px;">
-          <li>анализ документов</li>
-          <li>поиск информации</li>
-          <li>сравнение источников</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div class="card-title">Автоматизация</div>
-        <ul class="card-body" style="margin: 0; padding-left: 18px;">
-          <li>AI Agent</li>
-          <li>автоматизация Telegram</li>
-          <li>генерация черновиков</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div class="card-title">Визуал</div>
-        <ul class="card-body" style="margin: 0; padding-left: 18px;">
-          <li>презентации</li>
-          <li>изображения</li>
-          <li>схемы</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div class="card-title">Документация</div>
-        <ul class="card-body" style="margin: 0; padding-left: 18px;">
-          <li>инструкции</li>
-          <li>базы знаний</li>
-          <li>онбординг</li>
-        </ul>
-      </div>
+      
+      
+      
+      
     </div>
 
-    <div class="hr" style="margin: var(--space-6) 0;"></div>
+    
 
-    <p class="kicker" style="margin-bottom: var(--space-3);">Что это дало</p>
+    
     <div class="grid-2">
       <div class="card">
         <div class="card-kicker">Telegram-канал · VkusVill</div>
@@ -233,6 +212,7 @@
 </section>
 
 <footer class="wrap" style="padding: var(--space-5) 0; font-size: 12px; color: var(--color-neutral-700);">© 2026 Анастасия Маклакова</footer>
+</div>
 
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1280}, &quot;ctaLabel&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Написать в Telegram&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;ctaHref&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;https://t.me/makklakovaa&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;heroPhotoShape&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;rect&quot;, &quot;options&quot;: [&quot;rect&quot;, &quot;rounded&quot;, &quot;circle&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Внешний вид&quot;}, &quot;showEmbassyLine&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Контент&quot;}}"></script>
