@@ -8,8 +8,8 @@
 <body>
 <x-dc>
 <helmet>
-  <link rel="stylesheet" href="./styles.css">
-  <script src="./_ds_bundle.js"></script>
+  <link rel="stylesheet" href="_ds/modernist-e61e83f8-e86e-4474-82bd-0c9b6f204d5c/styles.css">
+  <script src="_ds/modernist-e61e83f8-e86e-4474-82bd-0c9b6f204d5c/_ds_bundle.js"></script>
   <script src="./image-slot.js"></script>
   <style>
     html { scroll-behavior: smooth; overscroll-behavior-y: none; }
@@ -18,7 +18,7 @@
     .safe-area-mask { position: fixed; top: 0; left: 0; right: 0; height: env(safe-area-inset-top, 0px); background: var(--color-bg); z-index: 60; }
     a { color: var(--color-accent-700); text-decoration: none; }
     a:hover { color: var(--color-accent); text-decoration: underline; }
-    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 var(--space-5); }
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 var(--space-6); }
     .sec { border-top: 2px solid var(--color-divider); padding: var(--space-8) 0; }
     .kicker { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700); font-weight: 600; margin: 0 0 var(--space-3); }
     .flow { display: flex; align-items: stretch; gap: var(--space-2); flex-wrap: wrap; }
@@ -67,23 +67,26 @@
   <a href="{{ ctaHref }}" class="btn btn-primary" target="_blank" rel="noopener" style="margin-left: auto;">{{ ctaLabel }}</a>
 </nav>
 
-<header id="about" class="wrap hero-grid" style="padding: var(--space-8) 0 var(--space-6);">
+<header id="about" class="wrap hero-grid" style="padding-top: var(--space-8); padding-bottom: var(--space-6);">
   <div>
     <p class="kicker">Product Communications · AI Content · Instructional Design</p>
     <h1 style="font-family: var(--font-heading); font-size: clamp(36px, 5vw, 56px); line-height: 1.05; margin: 0 0 var(--space-4);">Анастасия<br>Маклакова</h1>
     <p style="font-size: 19px; line-height: 1.5; max-width: 56ch; margin: 0 0 var(--space-4);">Создаю образовательный и продуктовый контент, автоматизирую рабочие процессы с помощью ИИ и объясняю сложное простым языком</p>
-    <div class="row" style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-5);">
+    <div class="row" style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-4);">
       <span class="tag tag-accent">Product Communications</span>
       <span class="tag tag-neutral">AI Content</span>
       <span class="tag tag-neutral">Instructional Design</span>
       <span class="tag tag-neutral">UX Research</span>
     </div>
-    <p style="font-size: 15px; line-height: 1.6; max-width: 62ch; color: var(--color-neutral-700);">&nbsp;Больше 10 лет преподавательского опыта, работала в топ-20 школ Москвы и в школах посольств РФ в Венгрии, Египте и Кувейте. Сейчас в продукте: строю коммуникации, ИИ-инструменты и исследования для пользователей курьерского приложения ВкусВилла. ИИ использую каждый день как рабочий инструмент, который ускоряет создание текстов, ресёрч и презентацию итогов команды.&nbsp;</p>
-    <div class="hr" style="margin: var(--space-5) 0;"></div>
-    <div style="display: flex; gap: var(--space-6); flex-wrap: wrap; font-size: 14px;">
-      <div><div class="flow-label">Сейчас</div><div>Product Communications Manager, ВкусВилл (июнь 2024 - н.в.)</div></div>
-      <div><div class="flow-label">Локация</div><div>Москва</div></div>
-      <div><div class="flow-label">Образование</div><div><a href="https://disk.yandex.ru/i/wyAe_W7CNX6-KA">МГИМО, факультет Международных отношений, 2016<br>МГИМО, магистратура Методика подготовки переводчиков для международных организаций. Педагогическое образование</a>,<a href="https://disk.yandex.ru/i/wyAe_W7CNX6-KA"> 2018</a> (диплом - по клику)</div></div>
+    <div class="card" style="margin-bottom: var(--space-4);">
+      <p class="card-body" style="font-size: 15px; line-height: 1.6; margin: 0;">Больше 10 лет преподавательского опыта, работала в топ-20 школ Москвы и в школах посольств РФ в Венгрии, Египте и Кувейте. Сейчас в продукте: строю коммуникации, ИИ-инструменты и исследования для пользователей курьерского приложения ВкусВилла. ИИ использую каждый день как рабочий инструмент, который ускоряет создание текстов, ресёрч и презентацию итогов команды.</p>
+    </div>
+    <div class="card">
+      <div style="display: flex; gap: var(--space-6); flex-wrap: wrap; font-size: 14px;">
+        <div><div class="flow-label">Сейчас</div><div>Product Communications Manager, ВкусВилл (июнь 2024 - н.в.)</div></div>
+        <div><div class="flow-label">Локация</div><div>Москва</div></div>
+        <div><div class="flow-label">Образование</div><div><a href="https://disk.yandex.ru/i/wyAe_W7CNX6-KA">МГИМО, факультет Международных отношений, 2016<br>МГИМО, магистратура Методика подготовки переводчиков для международных организаций. Педагогическое образование</a>,<a href="https://disk.yandex.ru/i/wyAe_W7CNX6-KA"> 2018</a> (диплом - по клику)</div></div>
+      </div>
     </div>
   </div>
   <div style="display: flex; flex-direction: column; gap: var(--space-3);">
@@ -213,7 +216,7 @@
   </div>
 </section>
 
-<footer class="wrap" style="padding: var(--space-5) 0; font-size: 12px; color: var(--color-neutral-700);">© 2026 Анастасия Маклакова</footer>
+<footer class="wrap" style="padding-top: var(--space-6); padding-bottom: var(--space-6); font-size: 12px; color: var(--color-neutral-700);">© 2026 Анастасия Маклакова</footer>
 </div>
 
 </x-dc>
