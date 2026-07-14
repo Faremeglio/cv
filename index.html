@@ -12,9 +12,10 @@
   <script src="_ds/modernist-e61e83f8-e86e-4474-82bd-0c9b6f204d5c/_ds_bundle.js"></script>
   <script src="./image-slot.js"></script>
   <style>
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); }
+    html { scroll-behavior: smooth; overscroll-behavior-y: none; }
+    body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); overscroll-behavior-y: none; }
     section[id], header[id] { scroll-margin-top: 90px; }
+    .safe-area-mask { position: fixed; top: 0; left: 0; right: 0; height: env(safe-area-inset-top, 0px); background: var(--color-bg); z-index: 60; }
     a { color: var(--color-accent-700); text-decoration: none; }
     a:hover { color: var(--color-accent); text-decoration: underline; }
     .wrap { max-width: 1140px; margin: 0 auto; padding: 0 var(--space-5); }
@@ -54,7 +55,8 @@
 </helmet>
 
 <div class="page-shell">
-<nav class="nav" style="position: sticky; top: 0; z-index: 50; background: var(--color-bg);">
+<div class="safe-area-mask"></div>
+<nav class="nav" style="position: sticky; top: 0; z-index: 50; background: var(--color-bg); padding-top: env(safe-area-inset-top, 0px);">
   <span class="nav-brand">Анастасия Маклакова</span>
   <a href="#about">Обо мне</a>
   <a href="#experience">Опыт</a>
@@ -85,7 +87,7 @@
     </div>
   </div>
   <div style="display: flex; flex-direction: column; gap: var(--space-3);">
-    <image-slot id="hero-photo" shape="{{ heroPhotoShape }}" src="./photo.jpg" fit="cover" placeholder="Фото профиля" style="width: 100%; aspect-ratio: 4 / 5;"></image-slot>
+    <img src="./photo.jpg" alt="Анастасия Маклакова" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block;">
   </div>
 </header>
 
@@ -179,68 +181,20 @@
     
     <div class="grid-4">
       <div style="display: flex; flex-direction: column; gap: var(--space-2);">
-  <a href="https://disk.yandex.ru/i/Rr7Z9_kY4yOMWQ" target="_blank" rel="noopener noreferrer">
-    <img src="./portfolio-1.png"
-         alt="Фронт дашборда с еженедельным исследованием"
-         style="width:100%; aspect-ratio:4/3; object-fit:cover; object-position:top; border:2px solid var(--color-divider);">
-  </a>
-  <p style="font-size:13px; margin:0;">
-    <a href="https://disk.yandex.ru/i/Rr7Z9_kY4yOMWQ"
-       target="_blank"
-       rel="noopener noreferrer"
-       style="color:inherit; text-decoration:none; font-weight:600;">
-      Фронт дашборда с еженедельным исследованием
-    </a>
-  </p>
-</div>
-
-<div style="display: flex; flex-direction: column; gap: var(--space-2);">
-  <a href="https://disk.yandex.ru/i/TAO9fmE3bwN03w" target="_blank" rel="noopener noreferrer">
-    <img src="./portfolio-2.png"
-         alt="Новый дашборд"
-         style="width:100%; aspect-ratio:4/3; object-fit:cover; object-position:top; border:2px solid var(--color-divider);">
-  </a>
-  <p style="font-size:13px; margin:0;">
-    <a href="https://disk.yandex.ru/i/TAO9fmE3bwN03w"
-       target="_blank"
-       rel="noopener noreferrer"
-       style="color:inherit; text-decoration:none; font-weight:600;">
-      Новый дашборд — презентация в корпоративном стиле вместо тяжелых презентаций
-    </a>
-  </p>
-</div>
-
-<div style="display: flex; flex-direction: column; gap: var(--space-2);">
-  <a href="https://disk.yandex.ru/i/V5dtL4wXFXjXAg" target="_blank" rel="noopener noreferrer">
-    <img src="./portfolio-3.png"
-         alt="Профиль корпоративного Telegram-канала"
-         style="width:100%; aspect-ratio:4/3; object-fit:cover; object-position:top; border:2px solid var(--color-divider);">
-  </a>
-  <p style="font-size:13px; margin:0;">
-    <a href="https://disk.yandex.ru/i/V5dtL4wXFXjXAg"
-       target="_blank"
-       rel="noopener noreferrer"
-       style="color:inherit; text-decoration:none; font-weight:600;">
-      Профиль корпоративного Telegram-канала
-    </a>
-  </p>
-</div>
-
-<div style="display: flex; flex-direction: column; gap: var(--space-2);">
-  <a href="https://disk.yandex.ru/i/rvChgamS3dczow" target="_blank" rel="noopener noreferrer">
-    <img src="./portfolio-4.png"
-         alt="Пример поста"
-         style="width:100%; aspect-ratio:4/3; object-fit:cover; object-position:top; border:2px solid var(--color-divider);">
-  </a>
-  <p style="font-size:13px; margin:0;">
-    <a href="https://disk.yandex.ru/i/rvChgamS3dczow"
-       target="_blank"
-       rel="noopener noreferrer"
-       style="color:inherit; text-decoration:none; font-weight:600;">
-      Пример поста
-    </a>
-  </p>
-</div>
+        <img src="./portfolio-1.png" alt="Telegram-пост с итогами опроса курьеров" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: top; border: 2px solid var(--color-divider);">
+        <p style="font-size: 13px; margin: 0;">Пример поста</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+        <img src="./portfolio-2.png" alt="Профиль корпоративного Telegram-канала" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: top; border: 2px solid var(--color-divider);">
+        <p style="font-size: 13px; margin: 0;">ТГ-канал</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+        <img src="./portfolio-3.png" alt="Дашборд итогов доставки по месяцам" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: top; border: 2px solid var(--color-divider);">
+        <p style="font-size: 13px; margin: 0;">Новый дашборд - презентация в корпоративном стиле вместо тяжелых презентаций</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+        <img src="./portfolio-4.png" alt="Дашборд еженедельного опроса новичков" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: top; border: 2px solid var(--color-divider);">
+        <p style="font-size: 13px; margin: 0;">Фронт дашборда с еженедельным исследованием</p>
       </div>
     </div>
   </div>
@@ -263,6 +217,6 @@
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1280}, &quot;ctaLabel&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Написать в Telegram&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;ctaHref&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;https://t.me/makklakovaa&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;heroPhotoShape&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;rect&quot;, &quot;options&quot;: [&quot;rect&quot;, &quot;rounded&quot;, &quot;circle&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Внешний вид&quot;}, &quot;showEmbassyLine&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Контент&quot;}}"></script>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1280}, &quot;ctaLabel&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Написать в Telegram&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;ctaHref&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;https://t.me/makklakovaa&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;showEmbassyLine&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Контент&quot;}}"></script>
 </body>
 </html>
