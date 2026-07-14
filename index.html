@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/modernist-e61e83f8-e86e-4474-82bd-0c9b6f204d5c/styles.css">
+  <script src="_ds/modernist-e61e83f8-e86e-4474-82bd-0c9b6f204d5c/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); }
+    section[id], header[id] { scroll-margin-top: 90px; }
+    a { color: var(--color-accent-700); text-decoration: none; }
+    a:hover { color: var(--color-accent); text-decoration: underline; }
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 var(--space-5); }
+    .sec { border-top: 2px solid var(--color-divider); padding: var(--space-8) 0; }
+    .kicker { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700); font-weight: 600; margin: 0 0 var(--space-3); }
+    .flow { display: flex; align-items: stretch; gap: var(--space-2); flex-wrap: wrap; }
+    .flow-step { flex: 1 1 160px; border: 2px solid var(--color-divider); padding: var(--space-3); min-width: 150px; }
+    .flow-arrow { display: flex; align-items: center; justify-content: center; color: var(--color-accent-700); font-size: 20px; padding: 0 2px; }
+    .flow-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-neutral-700); margin: 0 0 6px; }
+    .flow-text { font-size: 14px; line-height: 1.4; margin: 0; }
+    @media (max-width: 900px) { .flow { flex-direction: column; } .flow-arrow { transform: rotate(90deg); padding: 4px 0; } }
+    .hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-6); align-items: start; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
+    .contacts-row { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center; }
+    .nav { flex-wrap: wrap; row-gap: var(--space-2); }
+    @media (max-width: 860px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-grid > div:last-child { order: -1; max-width: 260px; }
+      .grid-3, .grid-4, .grid-2 { grid-template-columns: 1fr; }
+      .sec { padding: var(--space-6) 0; }
+      .wrap { padding: 0 var(--space-4); }
+      .nav { gap: var(--space-3); }
+      .nav .btn { margin-left: 0 !important; order: 10; width: 100%; text-align: left; }
+    }
+    @media (max-width: 520px) {
+      h1 { font-size: 32px !important; }
+    }
+  </style>
+</helmet>
+
+<nav class="nav" style="position: sticky; top: 0; z-index: 50; background: var(--color-bg);">
+  <span class="nav-brand">Анастасия Маклакова</span>
+  <a href="#about">Обо мне</a>
+  <a href="#experience">Опыт</a>
+  
+  <a href="#ai">Кейсы</a>
+  <a href="#portfolio">Портфолио</a>
+  <a href="#contacts">Контакты</a>
+  <a href="{{ ctaHref }}" class="btn btn-primary" style="margin-left: auto;">{{ ctaLabel }}</a>
+</nav>
+
+<header id="about" class="wrap hero-grid" style="padding: var(--space-8) 0 var(--space-6);">
+  <div>
+    <p class="kicker">Product Communications · AI Content · Instructional Design</p>
+    <h1 style="font-family: var(--font-heading); font-size: clamp(36px, 5vw, 56px); line-height: 1.05; margin: 0 0 var(--space-4);">Анастасия<br>Маклакова</h1>
+    <p style="font-size: 19px; line-height: 1.5; max-width: 56ch; margin: 0 0 var(--space-4);">Создаю образовательный и продуктовый контент, автоматизирую рабочие процессы с помощью ИИ и объясняю сложное простым языком</p>
+    <div class="row" style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-5);">
+      <span class="tag tag-accent">Product Communications</span>
+      <span class="tag tag-neutral">AI Content</span>
+      <span class="tag tag-neutral">Instructional Design</span>
+      <span class="tag tag-neutral">UX Research</span>
+    </div>
+    <p style="font-size: 15px; line-height: 1.6; max-width: 62ch; color: var(--color-neutral-700);">&nbsp;Больше 10 лет преподавательского опыта, работала в топ-20 школ Москвы и в школах посольств РФ в Венгрии, Египте и Кувейте. Сейчас в продукте: строю коммуникации, ИИ-инструменты и исследования для пользователей курьерского приложения ВкусВилла. ИИ использую каждый день как рабочий инструмент, который ускоряет создание текстов, ресёрч и презентацию итогов команды.&nbsp;</p>
+    <div class="hr" style="margin: var(--space-5) 0;"></div>
+    <div style="display: flex; gap: var(--space-6); flex-wrap: wrap; font-size: 14px;">
+      <div><div class="flow-label">Сейчас</div><div>Product Communications Manager, ВкусВилл (июнь 2024 - н.в.)</div></div>
+      <div><div class="flow-label">Локация</div><div>Москва</div></div>
+      <div><div class="flow-label">Образование</div><div><a href="https://disk.yandex.ru/i/wyAe_W7CNX6-KA">МГИМО, факультет Международных отношений, 2016<br>МГИМО, магистратура Методика подготовки переводчиков для международных организаций. Педагогическое образование</a>,<a href="https://disk.yandex.ru/i/wyAe_W7CNX6-KA"> 2018</a> (диплом - по клику)</div></div>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+    <image-slot id="hero-photo" shape="{{ heroPhotoShape }}" src="./photo.jpg" fit="cover" placeholder="Фото профиля" style="width: 100%; aspect-ratio: 4 / 5;"></image-slot>
+  </div>
+</header>
+
+<section id="experience" class="sec">
+  <div class="wrap">
+    <h2 style="font-family: var(--font-heading); font-size: 32px; margin: 0 0 var(--space-6);">Опыт</h2>
+    
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-kicker">VKUSVILL · PRODUCT COMMUNICATIONS MANAGER · ИЮНЬ 2024 — НАСТ. ВРЕМЯ</div>
+        <div class="card-title">Продуктовые коммуникации</div>
+        <ul class="card-body" style="margin: 0; padding-left: 18px;">
+          <li>запускаю коммуникации для продукта с десятками тысяч пользователей</li>
+          <li>создаю контент для разных каналов</li>
+          <li>запускаю UX исследования</li>
+          <li>анализирую обратную связь</li>
+          
+        </ul>
+      </div>
+      
+      <div class="card">
+        <div class="card-kicker">Школа №1517 · Частная школа · 2016 — 2020</div>
+        <div class="card-title">Учитель&nbsp;</div>
+        <ul class="card-body" style="margin: 0; padding-left: 18px;">
+          <li>10+ лет преподавания английского и французского (в т.ч. репетиторство)</li>
+          
+          <li>создание методических материалов</li><li>Трансформация 100+ материалов для перехода на онлайн обучение (в апреле 2020 года)</li>
+          
+        </ul>
+      </div>
+    </div>
+    <sc-if value="{{ showEmbassyLine }}" hint-placeholder-val="{{ true }}">
+      
+    </sc-if>
+  </div>
+</section>
+
+
+
+<section id="ai" class="sec">
+  <div class="wrap">
+    <h2 style="font-family: var(--font-heading); font-size: 32px; margin: 0 0 var(--space-3);">Кейсы</h2>
+    <p style="font-size: 17px; max-width: 56ch; margin: 0 0 var(--space-4);">Использую генеративный ИИ ежедневно — для контента, исследований, автоматизации и документации.</p>
+    <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-6);">
+      <span class="tag tag-outline">ChatGPT</span>
+      <span class="tag tag-outline">Claude</span>
+      <span class="tag tag-outline">Gemini</span>
+      <span class="tag tag-outline">Perplexity</span>
+    </div>
+    <div class="grid-4">
+      <div class="card">
+        <div class="card-title">Исследования</div>
+        <ul class="card-body" style="margin: 0; padding-left: 18px;">
+          <li>анализ документов</li>
+          <li>поиск информации</li>
+          <li>сравнение источников</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">Автоматизация</div>
+        <ul class="card-body" style="margin: 0; padding-left: 18px;">
+          <li>AI Agent</li>
+          <li>автоматизация Telegram</li>
+          <li>генерация черновиков</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">Визуал</div>
+        <ul class="card-body" style="margin: 0; padding-left: 18px;">
+          <li>презентации</li>
+          <li>изображения</li>
+          <li>схемы</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">Документация</div>
+        <ul class="card-body" style="margin: 0; padding-left: 18px;">
+          <li>инструкции</li>
+          <li>базы знаний</li>
+          <li>онбординг</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hr" style="margin: var(--space-6) 0;"></div>
+
+    <p class="kicker" style="margin-bottom: var(--space-3);">Что это дало</p>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-kicker">Telegram-канал · VkusVill</div>
+        <div class="card-title">ИИ-агент вместо ручной вёрстки постов</div>
+        <p class="card-body">Автоматизировала выпуск контента корпоративного Telegram-канала с помощью ИИ-агента. Агент адаптирован под стиль каждого из 27 участников команды, сам обновляет и проверяет метрики перед публикацией.</p>
+        <div class="card-meta"><span>Публикаций стало 2–3 в сутки вместо 1–2</span></div>
+      </div>
+      <div class="card">
+        <div class="card-kicker">Итоги команды · Claude Design + Claude Code</div>
+        <div class="card-title">Дашборд вместо презентаций</div>
+        <p class="card-body">Полностью изменила визуальную презентацию итогов команды: настроила дашборд в связке с Google Docs — вместо презентаций команда смотрит сайт с графиками.</p>
+        <div class="card-meta"><span>Обновление данных — 5 минут вместо минимум дня на сборку презентации</span></div>
+      </div>
+      <div class="card">
+        <div class="card-kicker">Опросы пользователей продукта</div>
+        <div class="card-title">ИИ-тегирование результатов</div>
+        <p class="card-body">Настроила ИИ-тегирование результатов опросов — это существенно сократило время на ручную обработку.</p>
+        <div class="card-meta"><span>Опрос отправляем раз в неделю вместо раза в 2–3 недели</span></div>
+      </div>
+      <div class="card">
+        <div class="card-kicker">Сайд-проекты</div>
+        <div class="card-title">Лендинги и дизайн-системы</div>
+        <p class="card-body">В своих сайд-проектах собираю лендинги и дизайн-системы в Claude Design.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" class="sec">
+  <div class="wrap">
+    <h2 style="font-family: var(--font-heading); font-size: 32px; margin: 0 0 var(--space-2);">Портфолио</h2>
+    <p style="font-size: 14px; color: var(--color-neutral-700); margin: 0 0 var(--space-5); max-width: 60ch;">Примеры до/после: исходная задача, запрос к ИИ, правки, финальный текст. Материалы добавлю сюда.</p>
+    <div class="grid-4">
+      <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+        <image-slot id="portfolio-1" shape="rect" placeholder="Telegram-пост: до/после" style="width: 100%; aspect-ratio: 4/3;"></image-slot>
+        <p style="font-size: 13px; margin: 0;">Пример поста</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+        <image-slot id="portfolio-2" shape="rect" placeholder="Коммуникация курьерам" style="width: 100%; aspect-ratio: 4/3;"></image-slot>
+        <p style="font-size: 13px; margin: 0;">ТГ-канал</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+        <image-slot id="portfolio-3" shape="rect" placeholder="Методичка / курс" style="width: 100%; aspect-ratio: 4/3;"></image-slot>
+        <p style="font-size: 13px; margin: 0;">Новый дашборд - презентация в корпоративном стиле вместо тяжелых презентаций</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+        <image-slot id="portfolio-4" shape="rect" placeholder="Презентация руководству" style="width: 100%; aspect-ratio: 4/3;"></image-slot>
+        <p style="font-size: 13px; margin: 0;">Фронт дашборда с еженедельным исследованием</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacts" class="sec" style="border-top: none; background: var(--color-accent); color: var(--color-neutral-100); padding: var(--space-8) 0;">
+  <div class="wrap">
+    <h2 style="font-family: var(--font-heading); font-size: 40px; margin: 0 0 var(--space-4);">Контакты</h2>
+    
+    <div class="contacts-row">
+      <a href="{{ ctaHref }}" class="btn btn-primary" style="background: var(--color-neutral-100); color: var(--color-accent-700); border-color: var(--color-neutral-100);">{{ ctaLabel }}</a>
+      <a href="tel:+79999216310" style="color: var(--color-neutral-100); text-decoration: underline;">+7 999 921-63-10</a>
+      <a href="mailto:makklakovaa@gmail.com" style="color: var(--color-neutral-100); text-decoration: underline;">makklakovaa@gmail.com</a>
+      <a href="https://www.linkedin.com/in/anastasia-maklakova-64567824a" style="color: var(--color-neutral-100); text-decoration: underline;">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap" style="padding: var(--space-5) 0; font-size: 12px; color: var(--color-neutral-700);">© 2026 Анастасия Маклакова</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1280}, &quot;ctaLabel&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Написать в Telegram&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;ctaHref&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;https://t.me/makklakovaa&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;heroPhotoShape&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;rect&quot;, &quot;options&quot;: [&quot;rect&quot;, &quot;rounded&quot;, &quot;circle&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Внешний вид&quot;}, &quot;showEmbassyLine&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Контент&quot;}}"></script>
+</body>
+</html>
